@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./favicon.png">
+    <link rel="icon" href="./favicon.png"/>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
-
     <title>Noorall</title>
   </head>
   <body >
@@ -47,6 +46,23 @@
           </p>
         </div>
       </section>
+
+      <section>
+        <article>
+          <h1>Color</h1>
+        </article>
+        <div __flex __jc_space_between __fw_nowrap __1of2 >
+
+          <p>Finally ,easily and dynamicly change colors just using & 
+            <span __code>--noorall_primary</span> 
+            and  <span __code>--noorall_secondary </span>  And also you can try generate colors as u want</p>
+          <div id='color_preview' __flex __jc_end>
+            <input type='color'/>
+            <input type='color'/>
+          </div>
+
+        </div>
+      </section>
       <section>
         <article>
           <h1>Form</h1>
@@ -74,52 +90,7 @@
 
         </form>
       </section>
-      <section>
-        <article>
-          <h1>Table</h1>
-        </article>
-        <div>
-          <p>The Table element represents data in two dimensions or more. We encourage the use of proper formatting with  <span __code>thead</span> and &
-            <span __code> thbody</span> to create a  <span __code>table</span>. The code becomes cleaner without disturbing understanding.</p>
-        </div>
-        <table >
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Height</th>
-              <th>Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Stephen Curry</td>
-              <td>27</td>
-              <td>1,91</td>
-              <td>Akron, OH</td>
-            </tr>
-            <tr>
-              <td>Klay Thompson</td>
-              <td>25</td>
-              <td>2,01</td>
-              <td>Los Angeles, CA</td>
-            </tr>
-            <tr>
-              <td>Stephen Curry</td>
-              <td>27</td>
-              <td>1,91</td>
-              <td>Akron, OH</td>
-            </tr>
-            <tr>
-              <td>Klay Thompson</td>
-              <td>25</td>
-              <td>2,01</td>
-              <td>Los Angeles, CA</td>
-            </tr>
 
-          </tbody>
-        </table>
-      </section>
       <section>
         <article>
           <h1>Code</h1>
@@ -137,7 +108,7 @@
                   <span __etag >p</span>
                 <span __etag>blockquote</span>
             <span __etag>section</span></code>
-    </pre>
+          </pre>
       </section>
       <section>
         <article>
@@ -148,21 +119,132 @@
         </div>
         <hr/>
 
-        <div __flex __fd_column __gap_2>
-          <div __flex __al_center __p_relative> 
-            <h1>Heading </h1>
-            <blockquote __flex  __p_absolute __full_right __bradius>
-              <span __code> <h6>h1</h6> </span>
+        <div __flex __fd_column __br>
+          
+          <blockquote __jc_space_between  __ai_center>
+            <h1>H1ading </h1>
+            <div __flex __ai_center>
+              <span __code> <h6>h1</h6></span>
               <p>8rem | 4.94rem | 3.06rem | 2.62rem</p> 
+            </div>
+          </blockquote>
+          <blockquote __jc_space_between  __ai_center>
+            <h2>H2ading </h2>
+            <div __flex>
+              <span __code> <h6>h4</h6>
+                </span>
+              <p>3.06rem</p> 
+            </div>
             </blockquote>
-
+          <blockquote __flex  __jc_space_between> 
+            <h3>H3ading </h3>
+            <div __flex  __ai_center  >
+              <span __code> <h6>h3</h6> </span>
+              <p>4.94rem | 3.06rem | 1.89rem | 1.62rem</p> 
+            </div>
+          </blockquote>
+            <blockquote    __full_right  __jc_space_between __gap_1 __ai_center>
+            <h4>H4ading </h4>
+            <div __flex __ai_center>
+              <span __code> <h6>h4</h6></span>
+              <p>1.89rem</p> 
+            </div>
+            </blockquote>
+            <blockquote __flex  __jc_space_between> 
+              <h5>H5ading </h5>
+              <div __flex  __ai_center  >
+                <span __code> <h6>h5</h6> </span>
+                <p>3.06rem | 1.89rem | 1.62rem | 1.16rem</p> 
+              </div>
+            </blockquote>
+            <blockquote __flex  __jc_space_between> 
+              <h6>H6ading </h6>
+              <div __flex  __ai_center  >
+                <span __code> <h6>h6</h6> </span>
+                  <p> 1.16rem</p> 
+              </div>
+            </blockquote>
           </div>
-          <!-- <div __flex __al_center > <h2>Heading </h2><span __code><h6>h2</h6> </span><p>6rem</p>  </div>
-          <div __flex __al_center> <h3>Heading </h3><span __code><h6>h3</h6> </span><p>6rem</p>  </div>
-          <div __flex __al_center> <h4>Heading </h4><span __code><h6>h4</h6> </span><p>6rem</p>  </div>
-          <div __flex __al_center> <h5>Heading </h5><span __code><h6>h5</h6> </span><p>6rem</p>  </div>
-          <div __flex __al_center> <h6>Heading </h6><span __code><h6>h6</h6> </span><p>6rem</p>  </div> -->
         </div>
+        <pre><code>
+            <span __stag>div <i>__flex __fd_column __br</i></span>
+              <span __stag>blockquote <i>__jc_space_between  __ai_center</i> </span>
+                <span __stag>h1</span>
+                  <span>H1ading</span>
+                <span __etag>h1</span>
+                <span __stag>div <i>__flex __ai_center</i> </span>
+                  <span __stag>h6 <i>__code</i> </span> <span>h1</span>  <span __etag>h6</span>
+                  <span __stag>p</span><span>8rem | 4.94rem | 3.06rem | 2.62rem</span><span __etag>p</span>
+                <span __etag>div</span>
+              <span __etag>blockquote</span>
+            <span __etag>div</span>
+        </code></pre>
+
+      </section>
+      <section>
+        <article>
+          <h1>Table</h1>
+        </article>
+        <div>
+          <p>The Table element represents data in two dimensions or more. We encourage the use of proper formatting with  <span __code>thead</span> and &
+            <span __code> thbody</span> to create a  <span __code>table</span>. The code becomes cleaner without disturbing understanding.</p>
+        </div>
+        <table >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Default</th>
+              <th> > Mobile</th>
+              <th>> Table</th>
+              <th>> Desktop</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h6 __stag>h1</h6></td>
+              <td>2.62rem</td>
+              <td>3.06rem</td>
+              <td>4.94rem</td>
+              <td>8rem</td>
+
+            </tr>
+            <tr>
+              <td><h6 __stag>h2</h6></td>
+              <td>3.06rem</td>
+              <td>default</td>
+              <td>default</td>
+              <td>default</td>
+            </tr>
+            <tr>
+              <td><h6 __stag>h3</h6></td>
+              <td>1.62rem</td>
+              <td>1.89rem</td>
+              <td>3.06rem</td>
+              <td>4.94rem</td>
+            </tr>
+            <tr>
+              <td><h6 __stag>h4</h6></td>
+              <td>1.89rem</td>
+              <td>default</td>
+              <td>default</td>
+              <td>default</td>
+            </tr>
+            <tr>
+              <td><h6 __stag>h5</h6></td>
+              <td>1.16rem</td>
+              <td>1.62rem</td>
+              <td>1.89rem</td>
+              <td>3.06rem</td>
+            </tr>
+            <tr>
+              <td><h6 __stag>h6</h6></td>
+              <td>1.16rem</td>
+              <td>default</td>
+              <td>default</td>
+              <td>default</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
       <section>
         <article>
@@ -221,5 +303,6 @@
       </button>
     </div> 
     </footer>
+    <script src="./index.js" type="text/javascript"></script>
   </body>
 </html>
