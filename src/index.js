@@ -1,3 +1,5 @@
+import '@styles/index.css'
+
 const body_node = document.querySelector('body');
 
 let primary_colors = ['#FAEBD7', '#080808'];
@@ -18,7 +20,6 @@ const color_preview_container_node = document.querySelector('#color_preview');
     set_up_colors();
   });
 });
-
 const theme_button_node = document.getElementById('_theme_button');
 
 theme_button_node.addEventListener('click', (el) => {
