@@ -9,7 +9,11 @@ const css = {
   use: [miniCss.loader, 'css-loader', ],
 };
 
+const pug = {
+  test: /\.pug$/,
 
+  use: ['pug-loader'],
+};
 const svg = {
   test: /\.svg$/,
   loader: 'svg-inline-loader',
@@ -48,18 +52,18 @@ module.exports = {
     chunkFilename: 'chunks/[name].bundle.js',
     path: path.resolve(__dirname, 'dist/'),
   },
+  
 
   module: {
-    rules: [css,svg],
+    rules: [css,svg,pug],
   },
   plugins: []
     .concat(
       pages.map(
         (page) =>
           new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, `src/pages/${page}.html`),
+            template: path.resolve(__dirname, `src/pages/${page}.pug`),
             filename: page === 'index' ? `${page}.html` : `pages/${page}.html`,
-
             chunks: [page],
           })
       )

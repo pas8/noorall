@@ -528,9 +528,6 @@ pre::after {
 
   z-index: 1;
 }
-code {
-  display: block;
-}
 
 code::after {
   content: '📋';
@@ -692,7 +689,7 @@ button[__contained]:focus::after {
   --norall_spacing_6: 4.94rem;
   --norall_spacing_7: 6.18rem;
   --norall_spacing_8: 7.64rem;
-  
+
   --norall_font_size_1: 1.16rem;
   --norall_font_size_2: 1.62rem;
   --norall_font_size_3: 1.89rem;
@@ -703,12 +700,50 @@ button[__contained]:focus::after {
   --norall_font_size_8: 9.89rem;
 }
 
+*[__mt1] {
+  margin-top: var(--norall_spacing_1);
+}
 
+*[__mt2] {
+  margin-top: var(--norall_spacing_2);
+}
 
+*[__mt3] {
+  margin-top: var(--norall_spacing_3);
+}
 
+*[__mt4] {
+  margin-top: var(--norall_spacing_4);
+}
 
+*[__mb1] {
+  margin-bottom: var(--norall_spacing_1);
+}
 
+*[__mb2] {
+  margin-bottom: var(--norall_spacing_2);
+}
 
+*[__mb3] {
+  margin-bottom: var(--norall_spacing_3);
+}
+
+*[__mb4] {
+  margin-bottom: var(--norall_spacing_4);
+}
+
+*[__gap1] {
+  gap: var(--norall_spacing_1);
+}
+*[__gap2] {
+  gap: var(--norall_spacing_2);
+}
+[__gap3] {
+  gap: var(--norall_spacing_3);
+}
+[__gap4] {
+  gap: var(--norall_spacing_4);
+}
 h1 {
   letter-spacing: -0.16rem;
   font-size: var(--norall_font_size_4);
@@ -894,8 +929,8 @@ ul li::before {
   background-color: currentColor;
   margin-right: 0.42rem;
   content: '';
-  -webkit-mask: url('@svgs/noorall.svg') no-repeat 50% 50%;
-  mask: url('@svgs/noorall.svg') no-repeat 50% 50%;
+  /* -webkit-mask: url('@svgs/noorall.svg') no-repeat 50% 50%; */
+  /* mask: url('.noorall.svg') no-repeat 50% 50%; */
   mask-size: cover;
   -webkit-mask: cover;
 }
@@ -908,4 +943,12 @@ ul li::before {
   *[__lsm_fd_column] {
     flex-direction: column;
   }
+}
+* {
+  white-space: pre-wrap;
+}
+
+button {
+  display: grid;
+  place-items: center;
 }
