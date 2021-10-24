@@ -262,7 +262,6 @@ header abbr svg,
   fill: currentColor;
 }
 
-
 header {
   backdrop-filter: blur(4px);
 }
@@ -273,11 +272,10 @@ header::before,
 header::after,
 header {
   border-bottom: 1px solid currentColor;
-border-right: 1px solid currentColor;
+  border-right: 1px solid currentColor;
   /* border-bottom-left-radius: var(--noorall_border_radius); */
   border-bottom-right-radius: var(--noorall_border_radius);
 
-  
   left: 0;
   right: 0;
   top: 0;
@@ -293,8 +291,8 @@ header::after {
   animation: bg_primary 0.8s linear forwards paused;
 
   animation-delay: -0.5s;
-  filter: invert(1) brightness(1.2) ;
-  opacity:0.8;
+  filter: invert(1) brightness(1.2);
+  opacity: 0.8;
 }
 
 form,
@@ -552,7 +550,6 @@ code::after {
 }
 
 pre > code {
-
   line-height: 2;
 }
 pre:hover > code::after {
@@ -844,45 +841,20 @@ h6 {
   flex-direction: column;
 }
 
-*[__p_relative] {
-  position: relative;
-}
-
-*[__p_absolute] {
-  position: absolute;
-}
-
 *[__inset] {
   inset: 0;
 }
 
-*[__full_right] {
-  top: 0;
-  bottom: 0;
-  right: 0;
+*[__full_width] {
+  width: 100%;
 }
 
-*[__full_left] {
-  top: 0;
-  bottom: 0;
-  left: 0;
-}
-
-*[__full_top] {
-  top: 0;
-  right: 0;
-  left: 0;
-}
 
 *[__jc_end] {
   justify-content: flex-end;
 }
 
-*[__full_bottom] {
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
+
 
 *[__jc_center] {
   justify-content: center;
@@ -956,7 +928,6 @@ ul li::before {
     flex-direction: column;
   }
 }
-
 
 button {
   display: grid;
