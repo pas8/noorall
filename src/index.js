@@ -1,17 +1,46 @@
 'use strict';
 import '@styles/index.css';
 
+const convert_rem_to_pixels = (rem) => {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+};
+
 const body_node = document.querySelector('body');
 
 let primary_colors = ['#FAEBD7', '#080808'];
 let is_dark_theme = true;
-let defaut_colors = [primary_colors[+is_dark_theme], '#5F9EA0'];
+let defaut_colors = [primary_colors[+is_dark_theme], '#96cff0'];
 
 const set_up_colors = () => {
-  body_node.style = `--noorall_primary:${defaut_colors[0]}; --noorall_secondary: ${defaut_colors[1]};--noorall_scroll:${defaut_colors[1]}`;
+  body_node.style = `--noorall_primary:${defaut_colors[0]}; --noorall_secondary: ${defaut_colors[1]};--noorall_scroll:${defaut_colors[1]}; --noorall_border_radius:16px`;
 };
 set_up_colors();
+
+
 const color_preview_container_node = document.querySelector('#color_preview');
+const nav_button_node = document.getElementById('_nav');
+
+nav_button_node.addEventListener('click', () => {
+  const is_active = nav_button_node.attributes.getNamedItem('__menu_icon__active');
+  !is_active
+    ? nav_button_node.setAttribute('__menu_icon__active', '')
+    : nav_button_node.removeAttribute('__menu_icon__active');
+  const { bottom, right } = nav_button_node.getBoundingClientRect();
+
+  const all_childrens = [...nav_button_node.parentElement.children];
+  const idx = all_childrens.indexOf(nav_button_node);
+  const el = all_childrens[idx + 1];
+
+  el.style.top = bottom + 16 + 'px';
+  el.style.transform = 'none';
+  el.style.right = !is_active ? window.innerWidth - right - 8 + 'px' : '-50%';
+});
+
+
+
+
+
+
 
 [...color_preview_container_node.children].forEach((el, idx) => {
   el.value = defaut_colors[idx];
@@ -21,6 +50,7 @@ const color_preview_container_node = document.querySelector('#color_preview');
     set_up_colors();
   });
 });
+
 const theme_button_node = document.getElementById('_theme_button');
 
 theme_button_node.addEventListener('click', () => {
@@ -40,7 +70,7 @@ theme_button_node.addEventListener('click', () => {
   const codecontainer = document.getElementById(__id);
 
   const random_id = () => Math.random().toString(32);
-  var elements = [];
+  let elements = [];
 
   const recursive_find_children = function (el, parent_id) {
     for (var i = 0, iLength = el.children.length; i < iLength; i++) {
@@ -66,7 +96,9 @@ theme_button_node.addEventListener('click', () => {
   });
 
   const spacing = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-  const genegate_spacing = (length) => `${spacing}&nbsp;&nbsp;&nbsp;&nbsp;${Array.from({ length }, () => spacing).join('')}`;
+
+  const genegate_spacing = (length) =>
+    `${spacing}&nbsp;&nbsp;&nbsp;&nbsp;${Array.from({ length }, () => spacing).join('')}`;
 
   const genegate_code_html = (arr) => {
     if (!arr?.length || !arr) return '';

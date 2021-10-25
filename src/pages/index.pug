@@ -5,22 +5,34 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Noorall
-div(__patern)
-  svg
-    defs
-      pattern#parern(x='0' y='0' patternunits='userSpaceOnUse' width='4rem' height='4rem' viewbox='0 0 520 651')
-        path(d='M205.642 594.097c-30.052-31.492-54.095-58.527-53.428-60.078.665-1.551 58.027-60.89 127.468-131.863L405.94 273.114l57.22 57.22 57.221 57.221-129.074 131.9c-70.99 72.546-129.513 131.901-130.05 131.901-.536 0-25.563-25.766-55.615-57.259z')
-        path(d='M.476 411.115c.262-68.339 1.388-188.796 2.502-267.683L5.003 0l74.218 136.132 74.218 136.131v263.104H0z')
-        path(d='M152.817 273.722c.61-2.046 26.9-59.89 58.423-128.542 31.522-68.652 59.027-128.603 61.122-133.224 2.094-4.622 4.678-8.92 5.741-9.554 2.455-1.463-.087-6.723 62.643 129.586 62.877 136.626 64.86 141.112 63.11 142.801-.743.716-57.78 1.606-126.75 1.978-120.763.65-125.358.537-124.289-3.045z')
-    rect(fill='url(#parern)' )
+//- div(__patern)
+//-   svg
+//-     defs
+//-       pattern#parern(x='0' y='0' patternunits='userSpaceOnUse' width='4rem' height='4rem' viewbox='0 0 520 651')
+//-         path(d='M205.642 594.097c-30.052-31.492-54.095-58.527-53.428-60.078.665-1.551 58.027-60.89 127.468-131.863L405.94 273.114l57.22 57.22 57.221 57.221-129.074 131.9c-70.99 72.546-129.513 131.901-130.05 131.901-.536 0-25.563-25.766-55.615-57.259z')
+//-         path(d='M.476 411.115c.262-68.339 1.388-188.796 2.502-267.683L5.003 0l74.218 136.132 74.218 136.131v263.104H0z')
+//-         path(d='M152.817 273.722c.61-2.046 26.9-59.89 58.423-128.542 31.522-68.652 59.027-128.603 61.122-133.224 2.094-4.622 4.678-8.92 5.741-9.554 2.455-1.463-.087-6.723 62.643 129.586 62.877 136.626 64.86 141.112 63.11 142.801-.743.716-57.78 1.606-126.75 1.978-120.763.65-125.358.537-124.289-3.045z')
+//-     rect(fill='url(#parern)' )
 header()
   div(__abbr ttle='Noorall UI' __flex __ai_center)
     include ../svgs/noorall.svg
     h4 Noorall UI
-  div
+
+  div(__flex __ai_center)
+    div(__br __form __color  )
+      //- button(__full_width)  Fuck off
+      input(placeholder='Search....')
+    button#_nav(__icon __small __menu)
+      span(__menu_icon _svg )
+    menu(_id='_nav' __bg __br) 
+      button Fuck off
+    button#_languages(__icon __small __menu) 
+      include ../svgs/languages.svg
+      menu(_id='_languages')
+
     button#_theme_button(__icon __small)
-      svg(viewbox='0 0 24 24')
-        path(_d='M10 4c4.41 0 8 3.59 8 8s-3.59 8-8 8c-.34 0-.68-.02-1.01-.07C10.9 17.77 12 14.95 12 12s-1.1-5.77-3.01-7.93C9.32 4.02 9.66 4 10 4m0-2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z' d='M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6.5c-3.03 0-5.5 2.47-5.5 5.5s2.47 5.5 5.5 5.5 5.5-2.47 5.5-5.5-2.47-5.5-5.5-5.5zm0 9c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z')
+      include ../svgs/theme.svg
+
 main
   section
     article
@@ -65,7 +77,7 @@ main
     div
       p
         | The Form has never been exactly fun, and it can be downright painful on a mobile device with its on-screen keyboard. Milligram helps to make this much easier with design focused on the user experience.
-    form
+    form(__flex __fd_column __gap1)
       select
         option Select 
         option 14-17
@@ -75,7 +87,7 @@ main
       label(__placeholder='Name')
       input(placeholder=' ' required title)
       label(__placeholder='Email')
-      button(__submit) Submit
+      button(__submit)  Submit &#10004;
   section
     article
       h1 Code

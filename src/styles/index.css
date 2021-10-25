@@ -5,7 +5,7 @@
   font-family: sans;
   font-weight: 400;
 }
-body *:not(form *) {
+section *:not(form *) {
   overflow: hidden;
 }
 
@@ -30,10 +30,6 @@ div[__patern] {
 div[__patern] svg {
   animation: text_primary 1s linear forwards paused -0.5s;
   fill: currentColor;
-}
-
-:root {
-  --noorall_border_radius: 10px;
 }
 
 ::-webkit-scrollbar-button {
@@ -74,7 +70,7 @@ a {
 }
 
 @keyframes text_primary {
-  32% {
+  36% {
     color: var(--noorall_primary);
     filter: invert(1);
   }
@@ -85,7 +81,7 @@ a {
 }
 
 @keyframes color_primary {
-  46% {
+  48% {
     filter: invert(1);
     color: var(--noorall_primary);
   }
@@ -104,7 +100,7 @@ a {
 }
 
 @keyframes color_bg_primary {
-  42% {
+  40% {
     color: var(--noorall_primary);
   }
   100% {
@@ -147,6 +143,14 @@ img {
   border-radius: var(--noorall_border_radius);
   max-width: 42%;
   object-fit: cover;
+}
+[__bg] {
+  /* animation: bg_secondary 1s linear forwards paused -0.5s; */
+  animation: bg_secondary 1s linear forwards paused -0.5s;
+}
+[__color] {
+  /* animation: bg_secondary 1s linear forwards paused -0.5s; */
+  animation: color_primary 1s linear forwards paused -0.5s;
 }
 
 section {
@@ -295,12 +299,10 @@ header::after {
   opacity: 0.8;
 }
 
-form,
-*[__form] {
-  width: 100%;
+[__form],
+form {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
 }
 
 form input,
@@ -344,11 +346,13 @@ form select:active option,
   color: initial;
 }
 
-form input:last-child {
+form input:last-child,
+[__form] input:last-child {
   order: -1;
 }
 
-form label {
+form label,
+[__form] label {
   position: relative;
 }
 
@@ -357,16 +361,19 @@ form button[__submit] {
   align-self: flex-end;
 }
 
-form label::after {
+form label::after,
+[__form] label::after {
   opacity: 0.8;
 }
 form label::after,
+[__form] label::after,
+[__form] label::before,
 form label::before {
   padding: 0rem 0.42rem;
   animation: color_primary 1s linear forwards paused;
   animation-delay: -0.5s;
   position: absolute;
-  top: -2.7rem;
+  top: -2.6rem;
   pointer-events: none;
   font-size: 1rem;
   transition: 0.42s ease all;
@@ -375,29 +382,30 @@ form label::before {
   content: attr(__placeholder);
 }
 
-form input:valid + label::after,
-form input:not(placeholder-shown):focus + label::before,
-form input:valid + label::before {
+input:valid + label::after,
+input:not(placeholder-shown):focus + label::before,
+input:valid + label::before {
   transform: translate(0, -1.24rem);
   font-size: 0.8rem;
 }
 
-form label::before {
+form label::before,
+[__form] label::before {
   content: attr(__placeholder);
   color: transparent;
   animation: bg_secondary 1s linear forwards paused;
   animation-delay: -0.5s;
 }
-form input:focus {
+input:focus {
   opacity: 1;
 }
 
-form input:hover {
+input:hover {
   opacity: 0.8;
 }
 
-form input:not(placeholder-shown):focus + label::after {
-  transform: translate(0, -1.24rem);
+input:not(placeholder-shown):focus + label::after {
+  transform: translate(0, -1.1rem);
   font-size: 0.8rem;
   border-radius: var(--noorall_border_radius);
   animation: color_primary 1s linear forwards paused;
@@ -423,11 +431,15 @@ button::after {
   transition: 0.42s ease all;
   z-index: 10;
   inset: 0;
+  top: 50%;
+
   background-color: transparent;
   position: absolute;
   opacity: 0;
 }
-
+button:hover::after {
+  top: 0;
+}
 button:hover::after,
 button:focus::after {
   background-color: currentColor;
@@ -449,7 +461,6 @@ button:not(:hover):focus::after {
   padding-bottom: 20%;
   width: 20%;
 
-  top: 50%;
   transform: translate(-50%, -50%);
   animation: 2s to infinite;
 }
@@ -605,41 +616,65 @@ footer > div {
   padding: 1.42rem 0;
 }
 
-button[__icon] {
+button[__icon],
+[__button][__icon] {
   opacity: 1;
   display: grid;
   place-items: center;
   height: fit-content;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   padding: 0rem;
   overflow: hidden;
   width: fit-content;
   animation: color_primary 1s linear forwards paused -0.5s;
+  border-color: transparent;
 }
 
-button[__icon] svg {
+button[__icon] svg,
+button[__icon] [_svg],
+[__button][__icon] svg,
+[__button][__icon] [_svg] {
   transition: 0.42s ease all;
-  width: 2rem;
-  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: var(--noorall_border_radius);
   padding: 0.8rem;
   box-sizing: content-box;
   border: 1px solid transparent;
   fill: currentColor;
+  position: relative;
+}
+button[__icon]::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  border-radius: var(--noorall_border_radius);
+  animation: text_primary 1s linear forwards paused -0.5s;
+  opacity: 0.42;
+  border: 1px solid currentColor;
 }
 
-button[__icon][__small] svg {
+button[__icon][__small] svg,
+button[__icon][__small] [_svg],
+[__button][__icon][__small] svg,
+[__button][__icon][__small] [_svg] {
   padding: 0.42rem;
 }
 
 button[__icon]::after,
-button[__icon] svg {
+button[__icon] svg,
+button[__icon] [_svg],
+[__button][__icon]::after,
+[__button][__icon] svg {
   filter: invert(1);
 }
 
+[__button][__icon]:hover,
 button[__icon]:hover {
   border-color: transparent;
 }
-button[__icon]:hover svg {
+button[__icon]:hover svg,
+[__button][__icon]:hover svg {
   border-color: currentColor;
 }
 
@@ -849,12 +884,9 @@ h6 {
   width: 100%;
 }
 
-
 *[__jc_end] {
   justify-content: flex-end;
 }
-
-
 
 *[__jc_center] {
   justify-content: center;
@@ -931,5 +963,52 @@ ul li::before {
 
 button {
   display: grid;
+  overflow: hidden;
+
   place-items: center;
+}
+
+button *[__menu_icon] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+[__menu_icon]::before,
+[__menu_icon]::after {
+  transition: 0.42s ease all;
+  background-color: currentColor;
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  left: 20%;
+}
+
+[__menu_icon]::before {
+  top: 36%;
+}
+[__menu_icon]::after {
+  bottom: 36%;
+}
+
+[__menu_icon__active] > [__menu_icon]::before {
+  left: 15%;
+  transform: rotate(45deg) translate(20%);
+}
+
+[__menu_icon__active] > [__menu_icon]::after {
+  left: 15%;
+  transform: rotate(-45deg) translate(20%);
+}
+
+menu {
+  transition: 0.42s ease all;
+  z-index: 100000000;
+  right: -50%;
+  padding: var(--norall_spacing_1);
+  position: fixed;
+}
+
+[__fd_row] {
+  flex-direction: row;
 }
